@@ -1,0 +1,22 @@
+.navbar {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+	width: 80%;
+  margin-top: 90px;
+}
+
+h1 {
+  font-size: 1.7em !important;
+}
+
+.navigation-links li {
+  display: inline-block;
+  margin: 0 16px;
+}
+
+.description {
+  padding-top: 2%;
+  font-size: 1em;
+}

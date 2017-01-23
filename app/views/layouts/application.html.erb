@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Флэшкарточкер</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'bootstrap', media: 'all' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'shared/navbar' %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 push-md-6">
+          <ul class="navigation-links">
+            <li><a href="#">Все карточки</a></li>
+            <li><a href="#">Добавить карточку</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 pull-md-6">
+          <h1>Флэшкарточкер</h1>
+        </div>
+      </div>
+
+      <%= yield %>
+      
+    </div>
+  </body>
+</html>

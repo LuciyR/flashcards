@@ -1,0 +1,44 @@
+Rails:
+  Enabled: true
+
+AllCops:
+  TargetRubyVersion: 2.4.0
+  Exclude:
+    - 'db/schema.rb'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'spec/*_helper.rb'
+    - 'app/assets/**/*'
+
+Metrics/LineLength:
+  Max: 120
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+Style/SpaceInsideHashLiteralBraces:
+ EnforcedStyle: no_space
+ EnforcedStyleForEmptyBraces: no_space
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+CaseIndentation:
+  IndentOneStep: true
+
+Style/AlignHash:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 20
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
