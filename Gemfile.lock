@@ -177,7 +177,7 @@ DEPENDENCIES
   pg
   puma (~> 3.0)
   rails (~> 5.0.1)
-  rainbow (= 2.2.1)
+  rainbow
   rubocop
   sass-rails (~> 5.0)
   spring
