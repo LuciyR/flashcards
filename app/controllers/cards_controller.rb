@@ -1,4 +1,6 @@
 class CardsController < ApplicationController
+  before_action :set_card, only: [:show, :edit, :update, :destroy]
+
   def index
     @cards = Card.all
   end
@@ -8,10 +10,10 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.create(card_params)
+    @card = Card.new(card_params)
     if @card.save
       flash[:success] = 'Saved'
-      redirect_to :show
+      redirect_to @card
     else
       flash[:alert] = 'Please check the form'
       render :new
@@ -27,7 +29,7 @@ class CardsController < ApplicationController
   def update
     if @card.update(card_params)
       flash[:success] = 'Updated'
-      redirect_to :show
+      redirect_to @card
     else
       flash[:alert] = 'Update failed'
       render :edit

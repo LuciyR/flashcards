@@ -1,29 +1,30 @@
-<div class="card card-default">
-	<div class="card-header">
-		Новая карточка
+<div class="card card default">
+  <div class="card-header">
+    Новая карточка
 	</div>
 	<div class="card-block">
-			<%= form_for @card do |f| %>
-			  <div class="row">
-					<div class="col-md-4">
-						<label>Оригинальный текст</label>
-						<%= f.text_field :original_text, class: 'form-control' %>
-            <br>
-					</div>
-				  <div class="col-md-4">
-						<label>Перевод (Deutsch)</label>
-						<%= f.text_field :translated_text, class: 'form-control' %>
-            <br>
-					</div>
-					<div class="col-md-4">
-						<label>Дата проверки</label>
-						<%= f.text_field :review_date, placeholder: 'формат: 2017-01-24', class: 'form-control' %>
-					</div>
-			  </div>
-        <br>
-				<div class="actions">
-					<%= f.submit 'Готово', class: 'btn btn-primary' %>
+    <%= form_for @card do |f| %>
+      <div class="row">
+        <div class="col-md-4">
+					<label>Оригинальный текст</label>
+					<%= f.text_field :original_text, class: 'form-control' %>
+          <br>
 				</div>
-			<% end %>
+				<div class="col-md-4">
+					<label>Перевод (Deutsch)</label>
+					<%= f.text_field :translated_text, class: 'form-control' %>
+          <br>
+				</div>
+				<div class="col-md-4">
+					<label>Дата проверки</label>
+					<%= f.text_field :review_date, placeholder: 'формат: 2017-01-24',
+					                               class: 'form-control' %>
+          <br>
+				</div>
+				<div class="actions">
+          <%= f.submit 'Готово', class: 'btn btn-primary' %>
+				</div>
+			</div>
+		<% end %>
 	</div>
 </div>
