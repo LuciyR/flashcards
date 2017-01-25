@@ -1,0 +1,18 @@
+<div class="card-deck-wrapper">
+  <div class="card-deck">
+    <% @cards.each do |card| %>
+      <div class="card">
+        <div class="card-header">
+          Оригинальный текст: <%= card.original_text %>
+        </div>
+        <div class="card-block">
+          Перевод (Deutsch): <%= card.translated_text %>
+        </div>
+        <div class="card-footer">
+          Дата проверки: <%= card.review_date.strftime('%d/%m/%Y') %>
+        </div>
+      </div>
+      <br>
+    <% end %>
+  </div>
+</div>

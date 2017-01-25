@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+  - 2.4.0
+before_install:
+  - gem install bundler -v 1.10
+  - gem update --system
+env:
+  - DB=pgsql
+services:
+  - postgresql
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bin/rake test
+test:
+  adapter: postgresql
+  database: flashcards_test
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'CREATE DATABASE flashcards_test;' -U postgres
