@@ -1,13 +1,12 @@
 language: ruby
 rvm:
   - 2.4.0
-install: true
+before_install: gem install bundler -v 1.12.5
 env:
   - DB=pgsql
 services:
   - postgresql
 script:
-  - gem build rainbow && gem install *.gem
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bin/rake test
 test:
