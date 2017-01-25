@@ -16,6 +16,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'rubocop'
 gem 'toastr-rails'
+gem 'rainbow'
 
 group :development, :test do
   gem 'byebug', platform: :mri
