@@ -8,7 +8,6 @@ services:
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bin/rake test
-install: gem install rainbow -v '2.2.1'
 test:
   adapter: postgresql
   database: flashcards_test
