@@ -6,17 +6,7 @@ default: &default
 development:
   <<: *default
   database: flashcards_development
-  username: admin
-  password: admin
 
 test:
   <<: *default
   database: flashcards_test
-  username: admin
-  password: admin
-
-production:
-  <<: *default
-  database: flashcards_production
-  username: admin
-  password: <%= ENV['TESTT_DATABASE_PASSWORD'] %>
