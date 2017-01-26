@@ -1,6 +1,6 @@
 class Card < ApplicationRecord
   before_create :set_review_date
-  validates_presence_of :original_text, :translated_text
+  validates :original_text, :translated_text, presence: true
   validate :cards_text_cannot_match
 
   protected
