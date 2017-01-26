@@ -1,6 +1,10 @@
-@import 'bootstrap';
-@import 'font-awesome';
-@import 'toastr';
+@import "bootstrap";
+@import "font-awesome";
+@import "toastr";
+
+// Colors
+$light-blue: #8caef7;
+$black: #000;
 
 .navbar {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
@@ -24,11 +28,10 @@ h1 {
 }
 
 .card-header {
-  background-color: #8caef7;
-}
-
-.card-header a {
-  color: black;
+  background-color: $light-blue;
+  a {
+    color: $black;
+  }
 }
 
 .description {
