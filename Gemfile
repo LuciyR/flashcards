@@ -8,15 +8,23 @@ end
 gem 'rails', '~> 5.0.1'
 gem 'pg'
 gem 'puma', '~> 3.0'
+gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'font-awesome-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'rubocop'
 gem 'toastr-rails'
 gem 'rainbow'
+gem 'simple_form'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
 
 group :development, :test do
   gem 'byebug', platform: :mri

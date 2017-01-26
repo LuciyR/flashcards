@@ -12,10 +12,8 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
     if @card.save
-      flash[:success] = 'Saved'
-      redirect_to @card
+      redirect_to @card, notice: 'Карточка создана'
     else
-      flash[:alert] = 'Please check the form'
       render :new
     end
   end
@@ -28,18 +26,15 @@ class CardsController < ApplicationController
 
   def update
     if @card.update(card_params)
-      flash[:success] = 'Updated'
-      redirect_to @card
+      redirect_to @card, notice: 'Готово'
     else
-      flash[:alert] = 'Update failed'
       render :edit
     end
   end
 
   def destroy
     @card.destroy
-    flash[:success] = 'Deleted'
-    redirect_to root_path
+    redirect_to root_path, notice: 'Карточка удалена'
   end
 
   private
