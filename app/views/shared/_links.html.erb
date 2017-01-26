@@ -1,0 +1,8 @@
+<%= link_to edit_card_path(@card) do %>
+  <%= fa_icon('pencil') %>
+<% end %>
+&nbsp;
+<%= link_to card_path(@card), data: {:confirm => 'Удаляем карточку?'},
+                              method: :delete do %>
+  <%= fa_icon('times') %>
+<% end %>

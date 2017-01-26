@@ -1,18 +1,23 @@
-<div class="card-deck-wrapper">
-  <div class="card-deck">
-    <% @cards.each do |card| %>
-      <div class="card">
-        <div class="card-header">
-          Оригинальный текст: <%= card.original_text %>
-        </div>
-        <div class="card-block">
-          Перевод (Deutsch): <%= card.translated_text %>
-        </div>
-        <div class="card-footer">
-          Дата проверки: <%= card.review_date.strftime('%d/%m/%Y') %>
+<div class="row">
+  <% @cards.each do |card| %>
+    <div class="col-xl-4 col-lg-6">
+      <div class="card-deck-wrapper">
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-header">
+              <%= link_to card do %>
+                Оригинальный текст: <%= card.original_text %>
+              <% end %>
+            </div>
+            <div class="card-block">
+              Перевод (Deutsch): <%= card.translated_text %>
+            </div>
+            <div class="card-footer">
+              Дата проверки: <%= card.review_date.strftime('%d/%m/%Y') %>
+            </div>
+          </div>
         </div>
       </div>
-      <br>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
