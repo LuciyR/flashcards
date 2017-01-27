@@ -6,11 +6,11 @@
           <div class="card">
             <div class="card-header">
               <%= link_to card do %>
-                Оригинальный текст: <%= card.original_text %>
+                Оригинальный текст (Deutsch): <%= card.original_text %>
               <% end %>
             </div>
             <div class="card-block">
-              Перевод (Deutsch): <%= card.translated_text %>
+              Перевод (English): <%= card.translated_text %>
             </div>
             <div class="card-footer">
               Дата проверки: <%= card.review_date.strftime('%d/%m/%Y') %>
