@@ -12,16 +12,15 @@ page.css('div .jsn-article-content ul li a').each do |link|
 end
 
 # Actually scrape
-count = links.size
-count.times do |i|
-  set_url = "http://www.languagedaily.com/" + links[i]
+links.each do |link|
+  set_url = "http://www.languagedaily.com/" + link
   set_page = Nokogiri::HTML(open(set_url))
   set_page.css('td.bigLetter').each do |line|
     original = line.text.downcase
     translated = line.next_element.text.downcase unless line.next_element.content.blank?
     unless Card.exists?(original_text: original)
       begin
-        Card.create!(original_text: original, translated_text: translated)
+        Card.create(original_text: original, translated_text: translated)
       rescue ActiveRecord::RecordInvalid
       end
     end
