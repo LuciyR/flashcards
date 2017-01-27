@@ -4,10 +4,10 @@
       <div class="card-deck">
         <div class="card">
           <div class="card-header">
-            Оригинальный текст: <%= @card.original_text %>
+            Оригинальный текст (Deutsch): <%= @card.original_text %>
           </div>
           <div class="card-block">
-            Перевод (Deutsch): <%= @card.translated_text %>
+            Перевод (English): <%= @card.translated_text %>
           </div>
           <div class="card-footer">
             Дата проверки: <%= @card.review_date.strftime('%d/%m/%Y') %>&nbsp;

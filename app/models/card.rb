@@ -10,8 +10,10 @@ class Card < ApplicationRecord
   end
 
   def cards_text_cannot_match
-    if original_text.downcase == translated_text.downcase
-      errors.add(:translated_text, 'Перевод должен отличаться от оригинала')
+    unless translated_text.nil?
+      if self.original_text.downcase == self.translated_text.downcase
+        errors.add(:translated_text, 'Перевод должен отличаться от оригинала')
+      end
     end
   end
 end
