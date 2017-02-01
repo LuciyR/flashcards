@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
   def index
-    @card = Card.review.first
+    @card = RandomCard.call
   end
 
   def check_card
     @card = Card.find(params[:id])
-    if @card.check_card(params[:answer])
+    if CheckAnswer.call(@card, answer_params[:answer])
       flash[:notice] = 'Верно!'
     else
       flash[:notice] = "Вы ошиблись. Правильный ответ: #{@card.original_text}"
@@ -15,7 +15,7 @@ class PagesController < ApplicationController
 
   private
 
-  def check_params
+  def answer_params
     params.permit(:answer)
   end
 end
