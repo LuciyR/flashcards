@@ -1,5 +1,5 @@
 <%= simple_form_for @card do |f| %>
-  <%= render 'shared/msg' %>
+  <%= render 'shared/msg', object: @card %>
   <div class="row">
     <div class="col-md-6">
       <%= f.input :original_text, label: 'Оригинальный текст (Deutsch):' %>
