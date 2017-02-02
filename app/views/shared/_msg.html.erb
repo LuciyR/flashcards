@@ -1,6 +1,6 @@
-<% unless @card.errors.empty? %>
+<% unless object.errors.empty? %>
   <script type="text/javascript">
-    <% @card.errors.full_messages.each do |msg| %>
+    <% object.errors.full_messages.each do |msg| %>
       toastr.error('<%= msg %>')
     <% end %>
   </script>
