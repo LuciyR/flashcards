@@ -5,12 +5,8 @@ class PagesController < ApplicationController
 
   def check_card
     @card = Card.find(params[:id])
-    if CheckAnswer.call(@card, answer_params[:answer])
-      flash[:notice] = 'Верно!'
-    else
-      flash[:notice] = "Вы ошиблись. Правильный ответ: #{@card.original_text}"
-    end
-    redirect_to root_url
+    result = CheckAnswer.call(@card, answer_params[:answer])
+    redirect_to root_url, notice: result
   end
 
   private
