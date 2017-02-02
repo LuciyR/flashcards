@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
   def index
-    @card = RandomCard.call
+    @card = CheckCard.call
   end
 
   def check_card
     @card = Card.find(params[:id])
-    result = CheckAnswer.call(@card, answer_params[:answer])
+    result = CheckCard.answer(@card, answer_params[:answer])
     redirect_to root_url, notice: result
   end
 
