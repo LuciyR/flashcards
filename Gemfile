@@ -27,6 +27,9 @@ source 'https://rails-assets.org' do
 end
 
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
   gem 'byebug', platform: :mri
 end
 
@@ -35,4 +38,9 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
 end
