@@ -5,7 +5,7 @@ describe CheckCard do
 
   describe 'check card service' do
     it 'is find random card with correct review date' do
-      checked_card = create(:checked_card)
+      checked_card = create(:card)
       checked_card.update_attributes(review_date: Time.now - 4.days)
       expect(CheckCard.call).to eq(checked_card)
     end
