@@ -2,10 +2,10 @@
   <p class="description">
     Первый в мире удобный менеджер флеш-карточек. Именно так.
   </p>
-  <%= render 'cards/card' %>
-  <div class="col-md-6">
-    <% if @card %>
+  <% if @card %>
+    <%= render 'cards/card' %>
+    <div class="col-md-6">
       <%= render 'form' %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </section>
