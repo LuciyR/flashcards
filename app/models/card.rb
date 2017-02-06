@@ -3,6 +3,8 @@ class Card < ApplicationRecord
   validates :original_text, :translated_text, presence: true
   validate :cards_text_cannot_match
 
+  belongs_to :user
+
   protected
 
   def set_review_date
