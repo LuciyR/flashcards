@@ -3,7 +3,9 @@ Capybara.ignore_hidden_elements = false
 
 RSpec.feature 'Main Page', type: :feature do
   before do
-    @card = create(:card)
+    @user = create(:user)
+    @card = create(:card, user: @user)
+    login_user(@user, 'password')
     @card.update_attributes(review_date: Time.now - 4.days)
     visit root_url
   end

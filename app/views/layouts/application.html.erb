@@ -14,12 +14,14 @@
       <div class="row">
         <div class="col-md-6 push-md-6">
           <ul class="navigation-links">
-            <li>
-              <%= link_to 'Все карточки', cards_path %>
-            </li>
-            <li>
-              <%= link_to 'Добавить карточку', new_card_path %>
-            </li>
+            <% if current_user %>
+              <li>
+                <%= link_to 'Все карточки', cards_path %>
+              </li>
+              <li>
+                <%= link_to 'Добавить карточку', new_card_path %>
+              </li>
+            <% end %>
           </ul>
         </div>
         <div class="col-md-6 pull-md-6">

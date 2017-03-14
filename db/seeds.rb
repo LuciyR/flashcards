@@ -3,7 +3,10 @@ require 'open-uri'
 url = 'http://www.languagedaily.com/learn-german/vocabulary/common-german-words'
 page = Nokogiri::HTML(open(url))
 
-# Card.delete_all
+User.delete_all
+Card.delete_all
+
+user = User.create(email: 'bart@simpson.com')
 
 # Find all links with words from Main Page
 links = ["/learn-german/vocabulary/common-german-words"]
@@ -20,7 +23,9 @@ links.each do |link|
     translated = line.next_element.text.downcase unless line.next_element.content.blank?
     unless Card.exists?(original_text: original)
       begin
-        Card.create(original_text: original, translated_text: translated)
+        Card.create(original_text: original,
+                    translated_text: translated,
+                    user_id: user.id)
       rescue ActiveRecord::RecordInvalid
       end
     end

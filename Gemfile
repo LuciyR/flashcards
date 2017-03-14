@@ -21,6 +21,7 @@ gem 'rubocop'
 gem 'toastr-rails'
 gem 'rainbow'
 gem 'simple_form'
+gem 'sorcery'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

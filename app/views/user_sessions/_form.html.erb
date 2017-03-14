@@ -1,0 +1,7 @@
+<%= simple_form_for :user_sessions, {url: user_sessions_path} do |f| %>
+  <div class="form-group col-md-6">
+    <%= f.input :email, label: 'Email', class: 'form-control' %>
+    <%= f.input :password, label: 'Пароль', class: 'form-control' %>
+    <%= f.submit 'Войти', class: 'btn btn-primary' %>
+  </div>
+<% end %>
