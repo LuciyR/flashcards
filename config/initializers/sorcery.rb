@@ -13,7 +13,7 @@ Rails.application.config.sorcery.configure do |config|
 
   # --- user config ---
   config.user_config do |user|
-    # user.authentications_class = Authentication
+    user.authentications_class = Authentication
   end
 
   config.user_class = 'User'
