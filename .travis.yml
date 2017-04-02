@@ -9,7 +9,7 @@ services:
   - postgresql
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bin/rake test
+  - bundle exec rspec
 test:
   adapter: postgresql
   database: flashcards_test
