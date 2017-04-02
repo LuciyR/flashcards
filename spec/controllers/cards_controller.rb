@@ -5,7 +5,6 @@ describe CardsController, type: :controller do
   before(:each) do
     users = create_list(:user, 2)
     @owner, @other = users
-    @deck = create(:deck, user: @owner)
     @card = create(:card, user: @owner)
   end
 
