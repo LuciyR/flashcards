@@ -15,11 +15,35 @@
           Главная
         <% end %>
       </li>
-      <li class="nav-item active">
-        <%= link_to '#', class: 'nav-link' do %>
-          О Проекте
-        <% end %>
-      </li>
+      <% if current_user %>
+        <li class="nav-item">
+          <%= link_to edit_user_path(current_user.id), class: 'nav-link' do %>
+            Редактировать профиль
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to :logout, method: :post, class: 'nav-link' do %>
+            Выйти
+          <% end %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to new_user_path, class: 'nav-link' do %>
+            Зарегистрироваться
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to auth_at_provider_path(provider: :github),
+                      class: 'nav-link' do %>
+            Войти через Github
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to :login, class: 'nav-link' do %>
+            Войти
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>

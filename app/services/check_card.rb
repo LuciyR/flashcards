@@ -2,8 +2,9 @@ class CheckCard
   attr_reader :answer
 
   def self.call
-    Card.where("review_date <= ?", DateTime.current).order("RANDOM()")
-                                                    .limit(1).first
+    Card.where("review_date <= ?", DateTime.current)
+               .order("RANDOM()")
+               .limit(1).first
   end
 
   def self.answer(card, answer)

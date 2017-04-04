@@ -1,0 +1,8 @@
+<%= simple_form_for @user do |f| %>
+  <%= render 'shared/msg', object: @user %>
+  <div class="form-group col-md-6">
+    <%= f.input :email, label: 'Email', class: 'form-control' %>
+    <%= f.input :password, label: 'Пароль', class: 'form-control' %>
+    <%= f.submit 'Готово', class: 'btn btn-primary' %>
+  </div>
+<% end %>

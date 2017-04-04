@@ -21,3 +21,6 @@
 .tags
 .tags1
 images/*
+
+# Ignore application configuration
+/config/application.yml
