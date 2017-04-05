@@ -7,6 +7,7 @@
             Оригинальный текст (Deutsch): <%= @card.original_text %>
           </div>
           <div class="card-block">
+            <%= image_tag(@card.image_url) if @card.image? %>
             Перевод (English): <%= @card.translated_text %>
           </div>
           <div class="card-footer">

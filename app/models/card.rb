@@ -1,5 +1,8 @@
 class Card < ApplicationRecord
+  attr_accessor :image_cache
   before_create :set_review_date
+  mount_uploader :image, ImageUploader
+
   validates :original_text, :translated_text, presence: true
   validate :cards_text_cannot_match
 

@@ -9,6 +9,13 @@
       <%= f.input :translated_text, label: 'Перевод (English):' %>
       <br>
     </div>
+    <div class="col-md-7">
+      <%= image_tag(@card.image_url) if @card.image? %>
+      <%= f.file_field :image %>
+      <%= f.hidden_field :image_cache %>
+    </div>
+    <br>
+    <br>
     <div class="col-md-6">
       <div class="actions">
         <%= f.button :submit, 'Готово', class: 'btn btn-primary' %>
